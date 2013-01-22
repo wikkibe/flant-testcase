@@ -6,7 +6,7 @@ create table hit (
 
 create or replace function pgq_new_hit() returns trigger as $$
 	begin
-		perform pgq.insert_event('admtc_queue', 'hit', new.url::text);
+		perform pgq.insert_event('flant_queue', 'hit', new.url::text);
 		return new;
 	end;
 $$ language plpgsql;
