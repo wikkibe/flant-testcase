@@ -19,4 +19,4 @@ def application(env, start_response):
     url = env["PATH_INFO"]
     save_hit(url)
     start_response('200 OK', [('Content-Type', 'text/html; charset=utf-8')])
-    return ['{0}@{1}'.format(url, unicode(time.time()))]
+    return ['Hit: {0}@{1}'.format(url, unicode(time.time()))]
